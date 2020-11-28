@@ -10,4 +10,5 @@
     <string name="title_login">Welcome to the Marvel HQ\'s</string>
     <string name="save">Save</string>
     <string name="name">Name</string>
+    <string name="image_comic">Image Comic</string>
 </resources>
