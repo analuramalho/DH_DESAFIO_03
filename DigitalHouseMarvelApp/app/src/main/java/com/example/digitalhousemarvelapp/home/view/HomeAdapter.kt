@@ -7,7 +7,8 @@ import com.example.digitalhousemarvelapp.R
 import com.example.digitalhousemarvelapp.home.model.ComicModel
 
 class HomeAdapter(
-    private val dataSet: List<ComicModel>
+    private val dataSet: List<ComicModel>,
+    private val clickListener: (ComicModel) -> Unit
 ) : RecyclerView.Adapter<HomeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -20,7 +21,9 @@ class HomeAdapter(
     override fun getItemCount() = dataSet.size
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
-        holder.bind(dataSet[position])
+        val dsPosition = dataSet[position]
+        holder.bind(dsPosition)
+        holder.itemView.setOnClickListener{clickListener(dsPosition)}
     }
 
 }

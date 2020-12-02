@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digitalhousemarvelapp.R
 import com.example.digitalhousemarvelapp.home.model.ComicModel
-import kotlinx.android.synthetic.main.fragment_comics_list_item.view.*
+import com.squareup.picasso.Picasso
 
 class HomeViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
 
@@ -14,6 +14,18 @@ class HomeViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
     private val textComic = view.findViewById<TextView>(R.id.textComic_Home)
 
     fun bind(comicModel: ComicModel){
+        textComic.text = "${comicModel.issueNumber}#"
+
+        if (comicModel.thumbnail == null || comicModel.thumbnail.path.contains("image_not_available")) {
+            Picasso.get()
+                .load(R.drawable.comic)
+                .into(imageComic)
+        } else {
+            val imagePath = "${comicModel.thumbnail.path}.${comicModel.thumbnail.extension}"
+            Picasso.get()
+                .load(imagePath)
+                .into(imageComic)
+        }
 
     }
 

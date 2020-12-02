@@ -11,4 +11,7 @@
     <string name="save">Save</string>
     <string name="name">Name</string>
     <string name="image_comic">Image Comic</string>
+    <string name="back">back</string>
+    <string name="register">Register</string>
+    <string name="cover_details_comic">cover details comic</string>
 </resources>
