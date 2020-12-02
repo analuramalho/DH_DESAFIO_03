@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="175dp"
     android:layout_margin="@dimen/dimen_10dp"
-    android:background="@color/colorPrimaryDark"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@color/colorPrimaryDark">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -32,10 +32,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="#96"
         android:textAlignment="textStart"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="#96" />
 </androidx.constraintlayout.widget.ConstraintLayout>

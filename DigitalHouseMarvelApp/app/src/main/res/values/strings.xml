@@ -19,4 +19,8 @@
     <string name="erro_email">Informe o email</string>
     <string name="erro_nome">Informe o nome</string>
     <string name="minimo_senha">Minimo 6 caracteres</string>
+    <string name="marvel_logo">marvel logo</string>
+    <string name="Published">Published: </string>
+    <string name="Price">Price: $ </string>
+    <string name="Pages">Pages: </string>
 </resources>

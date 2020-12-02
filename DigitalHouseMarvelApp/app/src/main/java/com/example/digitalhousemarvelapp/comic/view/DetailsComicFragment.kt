@@ -1,5 +1,6 @@
 package com.example.digitalhousemarvelapp.comic.view
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -24,7 +25,7 @@ class DetailsComicFragment : Fragment() {
     private lateinit var _view: View
     private lateinit var _viewModel: ComicViewModel
 
-    lateinit var imagePath:String
+    lateinit var imagePath: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +37,10 @@ class DetailsComicFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         _view = view
+
+        showLoading(true)
+
         _viewModel = ViewModelProvider(
             this,
             ComicViewModel.ComicViewModelFactory(ComicRepository())
@@ -55,6 +58,7 @@ class DetailsComicFragment : Fragment() {
 
         if (comicId != null) {
             _viewModel.getComicById(comicId).observe(viewLifecycleOwner, Observer {
+                showLoading(false)
                 titleComic.text = it.title
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -64,9 +68,9 @@ class DetailsComicFragment : Fragment() {
                     descriptionComic.text = Html.fromHtml(it.description);
                 }
 
-                dateComic.text = "Published: ${formatDate(it.dates[0].date)}"
-                priceComic.text = "Price: $ ${it.prices[0].price.toString()}"
-                pagesComic.text = "Pages: ${it.pageCount.toString()}"
+                dateComic.text = getString(R.string.Published) + formatDate(it.dates[0].date)
+                priceComic.text = getString(R.string.Price) + it.prices[0].price.toString()
+                pagesComic.text = getString(R.string.Pages) + it.pageCount.toString()
 
                 if (it.thumbnail == null || it.thumbnail.path.contains("image_not_available")) {
                     Picasso.get()
@@ -87,14 +91,27 @@ class DetailsComicFragment : Fragment() {
             })
         }
 
-        imageComic.setOnClickListener{
-            val bundle= bundleOf("URL" to imagePath)
-            _view.findNavController().navigate(R.id.action_detailsComicFragment_to_imageComicFragment,bundle)
+        imageComic.setOnClickListener {
+            val bundle = bundleOf("URL" to imagePath)
+            _view.findNavController()
+                .navigate(R.id.action_detailsComicFragment_to_imageComicFragment, bundle)
         }
 
         setBackNavigation()
     }
 
+
+    private fun showLoading(isLoading: Boolean) {
+        val viewLoading = _view.findViewById<View>(R.id.detailsComicsLoading)
+
+        if (isLoading) {
+            viewLoading.visibility = View.VISIBLE
+        } else {
+            viewLoading.visibility = View.GONE
+        }
+    }
+
+    @SuppressLint("SimpleDateFormat")
     private fun formatDate(date: String?): String? {
         val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
         val format = SimpleDateFormat("MMMM dd,yyyy")

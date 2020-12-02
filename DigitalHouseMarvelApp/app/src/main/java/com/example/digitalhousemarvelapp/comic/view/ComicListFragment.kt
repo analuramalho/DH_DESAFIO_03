@@ -63,13 +63,26 @@ class ComicListFragment : Fragment() {
         })
 
         _viewModel.getComics()
+        showLoading(true)
+
     }
 
     private fun showResults(list:List<ComicModel>?){
+        showLoading(false)
         list?.let{_comics.addAll(it)}
         _listAdapter.notifyDataSetChanged()
     }
 
+
+    private fun showLoading(isLoading: Boolean) {
+        val viewLoading = _view.findViewById<View>(R.id.listComicsLoading)
+
+        if (isLoading) {
+            viewLoading.visibility = View.VISIBLE
+        } else {
+            viewLoading.visibility = View.GONE
+        }
+    }
 
     companion object{
         const val COMIC_ID="COMIC_ID"
