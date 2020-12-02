@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.digitalhousemarvelapp.R
 import com.example.digitalhousemarvelapp.comic.repository.ComicRepository
@@ -21,6 +23,8 @@ import java.text.SimpleDateFormat
 class DetailsComicFragment : Fragment() {
     private lateinit var _view: View
     private lateinit var _viewModel: ComicViewModel
+
+    lateinit var imagePath:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +40,7 @@ class DetailsComicFragment : Fragment() {
         _view = view
         _viewModel = ViewModelProvider(
             this,
-            ComicViewModel.HomeViewModelFactory(ComicRepository())
+            ComicViewModel.ComicViewModelFactory(ComicRepository())
         ).get(ComicViewModel::class.java)
 
         val imageCoverComic = _view.findViewById<ImageView>(R.id.imageCover_Details)
@@ -69,7 +73,7 @@ class DetailsComicFragment : Fragment() {
                         .load(R.drawable.capa)
                         .into(imageComic)
                 } else {
-                    val imagePath = "${it.thumbnail.path}.${it.thumbnail.extension}"
+                    imagePath = "${it.thumbnail.path}.${it.thumbnail.extension}"
                     Picasso.get()
                         .load(imagePath)
                         .into(imageComic)
@@ -81,6 +85,11 @@ class DetailsComicFragment : Fragment() {
                         .into(imageCoverComic)
                 }
             })
+        }
+
+        imageComic.setOnClickListener{
+            val bundle= bundleOf("URL" to imagePath)
+            _view.findNavController().navigate(R.id.action_detailsComicFragment_to_imageComicFragment,bundle)
         }
 
         setBackNavigation()

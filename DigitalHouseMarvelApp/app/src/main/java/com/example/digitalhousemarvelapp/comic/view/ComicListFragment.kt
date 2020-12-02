@@ -55,7 +55,7 @@ class ComicListFragment : Fragment() {
 
         _viewModel=ViewModelProvider(
             this,
-            ComicViewModel.HomeViewModelFactory(ComicRepository())
+            ComicViewModel.ComicViewModelFactory(ComicRepository())
         ).get(ComicViewModel::class.java)
 
         _viewModel.getComics().observe(viewLifecycleOwner, Observer {

@@ -24,7 +24,7 @@ class ComicViewModel(
         emit(response.data.results[0])
     }
 
-    class HomeViewModelFactory(
+    class ComicViewModelFactory(
         private val repository: ComicRepository
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {

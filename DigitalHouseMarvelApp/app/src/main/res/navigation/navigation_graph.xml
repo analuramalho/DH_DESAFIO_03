@@ -30,7 +30,11 @@
         android:id="@+id/detailsComicFragment"
         android:name="com.example.digitalhousemarvelapp.comic.view.DetailsComicFragment"
         android:label="fragment_details_comic"
-        tools:layout="@layout/fragment_details_comic" />
+        tools:layout="@layout/fragment_details_comic" >
+        <action
+            android:id="@+id/action_detailsComicFragment_to_imageComicFragment"
+            app:destination="@id/imageComicFragment" />
+    </fragment>
     <fragment
         android:id="@+id/comicListFragment"
         android:name="com.example.digitalhousemarvelapp.comic.view.ComicListFragment"
@@ -40,4 +44,9 @@
             android:id="@+id/action_comicListFragment_to_detailsComicFragment"
             app:destination="@id/detailsComicFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/imageComicFragment"
+        android:name="com.example.digitalhousemarvelapp.comic.view.ImageComicFragment"
+        android:label="fragment_image_comic"
+        tools:layout="@layout/fragment_image_comic" />
 </navigation>
