@@ -5,7 +5,7 @@ import okhttp3.Response
 import java.math.BigInteger
 import java.security.MessageDigest
 
-class NetworkInterceptor:Interceptor {
+class NetworkInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         val ts = System.currentTimeMillis().toString()
@@ -36,12 +36,8 @@ class NetworkInterceptor:Interceptor {
         private const val API_KEY = "apikey"
         private const val HASH = "hash"
 
-        /*private const val PRIVATE_KEY = "0dd0c16fedb8a02985977eafca66b49f5e6a526f"
-        const val PUBLIC_KEY = "6eb7e8896ec5850c52515a8a23ee97f0"*/
-
-        private const val PRIVATE_KEY = "4d77528a9587d40aa56223b3bc267595c069fd51"
-        const val PUBLIC_KEY = "4e59756e8e77a491c00646ba8c763f62"
-
+        private const val PRIVATE_KEY = "0dd0c16fedb8a02985977eafca66b49f5e6a526f"
+        const val PUBLIC_KEY = "6eb7e8896ec5850c52515a8a23ee97f0"
 
         fun String.md5(): String {
             val md = MessageDigest.getInstance("MD5")
