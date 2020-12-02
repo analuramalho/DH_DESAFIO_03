@@ -1,14 +1,14 @@
-package com.example.digitalhousemarvelapp.home.view
+package com.example.digitalhousemarvelapp.comic.view
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digitalhousemarvelapp.R
-import com.example.digitalhousemarvelapp.home.model.ComicModel
+import com.example.digitalhousemarvelapp.comic.model.ComicModel
 import com.squareup.picasso.Picasso
 
-class HomeViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
+class ComicViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
 
     private val imageComic = view.findViewById<ImageView>(R.id.imageComic_Home)
     private val textComic = view.findViewById<TextView>(R.id.textComic_Home)

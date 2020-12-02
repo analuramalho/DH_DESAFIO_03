@@ -1,4 +1,4 @@
-package com.example.digitalhousemarvelapp.detailsComic.view
+package com.example.digitalhousemarvelapp.comic.view
 
 import android.os.Build
 import android.os.Bundle
@@ -13,15 +13,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.digitalhousemarvelapp.R
-import com.example.digitalhousemarvelapp.home.repository.ComicRepository
-import com.example.digitalhousemarvelapp.home.view.HomeFragment
-import com.example.digitalhousemarvelapp.home.viewmodel.HomeViewModel
+import com.example.digitalhousemarvelapp.comic.repository.ComicRepository
+import com.example.digitalhousemarvelapp.comic.viewmodel.ComicViewModel
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 
 class DetailsComicFragment : Fragment() {
     private lateinit var _view: View
-    private lateinit var _viewModel: HomeViewModel
+    private lateinit var _viewModel: ComicViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +36,8 @@ class DetailsComicFragment : Fragment() {
         _view = view
         _viewModel = ViewModelProvider(
             this,
-            HomeViewModel.HomeViewModelFactory(ComicRepository())
-        ).get(HomeViewModel::class.java)
+            ComicViewModel.HomeViewModelFactory(ComicRepository())
+        ).get(ComicViewModel::class.java)
 
         val imageCoverComic = _view.findViewById<ImageView>(R.id.imageCover_Details)
         val imageComic = _view.findViewById<ImageView>(R.id.image_Details)
@@ -48,7 +47,7 @@ class DetailsComicFragment : Fragment() {
         val priceComic = _view.findViewById<TextView>(R.id.textPrice_Details)
         val pagesComic = _view.findViewById<TextView>(R.id.textPages_Details)
 
-        val comicId = arguments?.getInt(HomeFragment.COMIC_ID)
+        val comicId = arguments?.getInt(ComicListFragment.COMIC_ID)
 
         if (comicId != null) {
             _viewModel.getComicById(comicId).observe(viewLifecycleOwner, Observer {

@@ -1,4 +1,4 @@
-package com.example.digitalhousemarvelapp.home.model
+package com.example.digitalhousemarvelapp.comic.model
 
 data class ComicPrice (
     val type: String?,

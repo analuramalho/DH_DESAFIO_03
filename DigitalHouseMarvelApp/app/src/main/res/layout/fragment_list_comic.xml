@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dimen_23dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".home.view.HomeFragment"
+    tools:context=".comic.view.ComicListFragment"
     android:background="@color/colorPrimaryDark">
 
 
@@ -14,10 +15,10 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:padding="@dimen/dimen_10dp"
-        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

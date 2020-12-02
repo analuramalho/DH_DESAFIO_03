@@ -1,6 +1,6 @@
 package com.example.digitalhousemarvelapp.data.model
 
-import com.example.digitalhousemarvelapp.home.model.ComicModel
+import com.example.digitalhousemarvelapp.comic.model.ComicModel
 
 data class ComicDataContainer (
     val offset:Int,

@@ -1,7 +1,4 @@
-package com.example.digitalhousemarvelapp.home.repository
-
-import android.content.Context
-import com.example.digitalhousemarvelapp.R
+package com.example.digitalhousemarvelapp.comic.repository
 
 class ComicRepository() {
     private val _client = IComicEndpoint.endpoint

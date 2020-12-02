@@ -1,9 +1,6 @@
-package com.example.digitalhousemarvelapp.home.model
+package com.example.digitalhousemarvelapp.comic.model
 
-import android.media.Image
 import com.example.digitalhousemarvelapp.data.model.ThumbnailModel
-import com.example.digitalhousemarvelapp.home.model.ComicDate
-import com.example.digitalhousemarvelapp.home.model.ComicPrice
 
 data class ComicModel(
     val id : Int,

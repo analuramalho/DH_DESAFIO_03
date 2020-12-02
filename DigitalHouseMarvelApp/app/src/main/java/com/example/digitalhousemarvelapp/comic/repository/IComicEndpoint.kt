@@ -1,8 +1,8 @@
-package com.example.digitalhousemarvelapp.home.repository
+package com.example.digitalhousemarvelapp.comic.repository
 
 import com.example.digitalhousemarvelapp.data.api.NetworkUtils
 import com.example.digitalhousemarvelapp.data.model.ResponseModel
-import com.example.digitalhousemarvelapp.home.model.ComicModel
+import com.example.digitalhousemarvelapp.comic.model.ComicModel
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

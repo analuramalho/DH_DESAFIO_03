@@ -1,14 +1,13 @@
-package com.example.digitalhousemarvelapp.home.viewmodel
+package com.example.digitalhousemarvelapp.comic.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
-import com.example.digitalhousemarvelapp.home.model.ComicModel
-import com.example.digitalhousemarvelapp.home.repository.ComicRepository
+import com.example.digitalhousemarvelapp.comic.model.ComicModel
+import com.example.digitalhousemarvelapp.comic.repository.ComicRepository
 import kotlinx.coroutines.Dispatchers
 
-class HomeViewModel(
+class ComicViewModel(
     private val _repository: ComicRepository
 ) : ViewModel() {
 
@@ -29,7 +28,7 @@ class HomeViewModel(
         private val repository: ComicRepository
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return HomeViewModel(repository) as T
+            return ComicViewModel(repository) as T
         }
 
     }

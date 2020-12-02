@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
 
         val btnLogin = _view.findViewById<Button>(R.id.btnLogin_Login)
         btnLogin.setOnClickListener {
-            _view.findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            _view.findNavController().navigate(R.id.action_loginFragment_to_comicListFragment)
         }
 
         val btnCreateAccount = _view.findViewById<Button>(R.id.btnCreateAccount_Login)
