@@ -20,6 +20,10 @@ class HomeViewModel(
         emit(response.data.results)
     }
 
+    fun getComicById(comicId: Int) = liveData(Dispatchers.IO) {
+        val response = _repository.getComicById(comicId)
+        emit(response.data.results[0])
+    }
 
     class HomeViewModelFactory(
         private val repository: ComicRepository

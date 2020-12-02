@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -43,7 +44,8 @@ class HomeFragment : Fragment() {
 
         _comics = mutableListOf<ComicModel>()
         _listAdapter= HomeAdapter(_comics){
-            _view.findNavController().navigate(R.id.action_homeFragment_to_detailsComicFragment)
+            val bundle= bundleOf(COMIC_ID to it.id)
+            _view.findNavController().navigate(R.id.action_homeFragment_to_detailsComicFragment, bundle)
         }
 
         _recyclerView=_view.findViewById<RecyclerView>(R.id.listComics)
@@ -70,4 +72,10 @@ class HomeFragment : Fragment() {
         list?.let{_comics.addAll(it)}
         _listAdapter.notifyDataSetChanged()
     }
+
+
+    companion object{
+        const val COMIC_ID="COMIC_ID"
+    }
 }
+

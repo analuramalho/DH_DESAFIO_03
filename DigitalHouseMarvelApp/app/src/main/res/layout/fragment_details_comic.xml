@@ -8,7 +8,7 @@
     tools:context=".detailsComic.view.DetailsComicFragment">
 
     <ImageView
-        android:id="@+id/image_Details"
+        android:id="@+id/imageCover_Details"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitXY"
@@ -19,6 +19,7 @@
         android:contentDescription="@string/cover_details_comic" />
 
     <ImageView
+        android:id="@+id/imgBack_Details"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -30,14 +31,14 @@
         android:contentDescription="@string/back" />
 
     <ImageView
-        android:id="@+id/imageCover_Details"
+        android:id="@+id/image_Details"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
         android:src="@drawable/comic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/image_Details"
+        app:layout_constraintTop_toTopOf="@+id/imageCover_Details"
         android:contentDescription="@string/cover_details_comic" />
 
 
@@ -54,7 +55,7 @@
         android:textSize="@dimen/dimen_25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_Details" />
+        app:layout_constraintTop_toBottomOf="@+id/imageCover_Details" />
 
     <TextView
         android:id="@+id/textDescriptionComic_Details"

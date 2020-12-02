@@ -6,4 +6,5 @@ import com.example.digitalhousemarvelapp.R
 class ComicRepository() {
     private val _client = IComicEndpoint.endpoint
     suspend fun getComics(title: String?, offset: Int? = 0) = _client.getComics(title, offset)
+    suspend fun getComicById(comicId:Int) = _client.getComicById(comicId)
 }
