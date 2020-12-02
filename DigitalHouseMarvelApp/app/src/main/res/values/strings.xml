@@ -14,4 +14,9 @@
     <string name="back">back</string>
     <string name="register">Register</string>
     <string name="cover_details_comic">cover details comic</string>
+
+    <string name="erro_senha">Informe a senha</string>
+    <string name="erro_email">Informe o email</string>
+    <string name="erro_nome">Informe o nome</string>
+    <string name="minimo_senha">Minimo 6 caracteres</string>
 </resources>

@@ -27,7 +27,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imgCharactersDetailsBack"
+                android:id="@+id/imgBack_Register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_5dp"
@@ -49,7 +49,7 @@
                 android:textSize="@dimen/dimen_25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgCharactersDetailsBack"
+                app:layout_constraintStart_toEndOf="@+id/imgBack_Register"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -59,7 +59,7 @@
         android:id="@+id/imgCall"
         android:layout_width="@dimen/dimen_150dp"
         android:layout_height="@dimen/dimen_150dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/dimen_75dp"
         android:elevation="@dimen/dimen_10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/user"
@@ -70,7 +70,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="@dimen/dimen_450dp"
         android:layout_margin="@dimen/dimem_15dp"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="@dimen/dimen_12dp"
@@ -85,7 +85,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="@dimen/dimen_12dp"
                 app:layout_constraintBottom_toBottomOf="parent">
 
@@ -150,7 +150,7 @@
                         android:id="@+id/btnSave_Register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_40dp"
                         android:background="@drawable/button_background"
                         android:fontFamily="@font/roboto_bold"
                         android:text="@string/save"
@@ -163,6 +163,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
